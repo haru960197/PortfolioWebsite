@@ -1,10 +1,14 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Bio from '../components/home/bio.astro';
+import Avatar from '../components/home/Avatar.astro';
 ---
 
 <Layout>
   <div class="flex">
-    <Bio />
+    <div class="flex flex-row justify-between w-full pl-24 pr-64">
+      <Bio />
+      <Avatar />
+    </div>
   </div>
 </Layout>
