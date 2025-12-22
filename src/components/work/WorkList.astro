@@ -1,0 +1,13 @@
+---
+import { getCollection } from 'astro:content';
+import WorkItem from './WorkItem.astro';
+
+const works = await getCollection('work');
+---
+
+<ul>
+  {works.map((work) => (
+  <li><WorkItem work={work} /></li>
+  ))}
+</ul>
+

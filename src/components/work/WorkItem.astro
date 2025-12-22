@@ -1,2 +1,13 @@
-<div class="flex gap-4">
-  <
+---
+import type { CollectionEntry, render } from 'astro:content';
+interface Props {
+  work: CollectionEntry<'work'>;
+}
+
+const { work } = Astro.props;
+---
+
+<div class="p-4 border-1 border-white">
+  <p>{work.id}</p>
+</div>
+
