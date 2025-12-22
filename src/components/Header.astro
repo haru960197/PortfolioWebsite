@@ -1,5 +1,30 @@
+---
+const { pathname } = Astro.url;
+
+const navItems = [
+  { href: '/', label: 'Home' },
+];
+---
+
 <div class="navbar bg-base-100 shadow-lg">
   <div class="flex-1 flex justify-end gap-8 mr-16">
-    <a class="link link-hover text-xl">Test</a>
+    {navItems.map((item) => {
+      // 末尾のスラッシュの有無による判定揺れを防ぐ
+      const normalizePath = (path) => path.replace(/\/$/, '') || '/';
+      const isActive = normalizePath(pathname) === normalizePath(item.href);
+
+      return (
+        <a
+          href={item.href}
+          class:list={[
+            "link link-hover text-xl",
+            { "underline decoration-2 underline-offset-4 font-bold": isActive }
+          ]}
+        >
+          {item.label}
+        </a>
+      );
+    })}
   </div>
 </div>
+
