@@ -9,7 +9,10 @@ interface Props {
 const { work } = Astro.props;
 ---
 
-<div class="w-full p-4 border-2 border-white rounded-xl">
+<a
+  href={`/works/${work.id}`}
+  class="w-full p-4 border-2 border-white rounded-xl hover:bg-gray-700"
+>
   <div class="flex gap-4">
     <Image
       src={work.data.thumbnail}
@@ -29,5 +32,5 @@ const { work } = Astro.props;
       </div>
     </div>
   </div>
-</div>
+</a>
 
