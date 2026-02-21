@@ -5,9 +5,9 @@ import WorkItem from './WorkItem.astro';
 const works = await getCollection('work');
 ---
 
-<ul>
+<div class="grid gap-4 w-full grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
   {works.map((work) => (
-  <li><WorkItem work={work} /></li>
+    <WorkItem work={work} />
   ))}
-</ul>
+</div>
 

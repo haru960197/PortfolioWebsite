@@ -7,6 +7,7 @@ const work = defineCollection({
   schema: z.object({
     pubDate: z.coerce.date(),
     updatedDate: z.coerce.date().optional(),
+    title: z.string(),
     summary: z.string(),
     thumbnail: z.string().url(),
   })

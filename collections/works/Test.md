@@ -1,5 +1,6 @@
 ---
 pubDate: 2025/12/22
+title: 阿部寛のホームページ
 summary: テストで作成したMarkdown．果たしてうまくいくのだろうか！
 thumbnail: https://abehiroshi.la.coocan.jp/abe-top-20190328-2.jpg
 ---
