@@ -8,6 +8,7 @@ const work = defineCollection({
     pubDate: z.coerce.date(),
     updatedDate: z.coerce.date().optional(),
     title: z.string(),
+    tags: z.array(z.string()),
     summary: z.string(),
     thumbnail: z.string().url(),
   })

@@ -26,8 +26,17 @@ const { work } = Astro.props;
     <div class="flex flex-col gap-2">
       <p class="text-2xl font-bold">{work.data.title}</p>
 
-      <div class="flex flex-col ml-2">
-        <p class="text-sm text-gray-400">{work.data.pubDate.toLocaleDateString('ja-JP')}</p>
+      <div class="flex flex-col gap-1 ml-2">
+        {/* 日付とタグ */}
+        <div class="flex flex-col text-sm text-gray-400">
+          <p>{work.data.pubDate.toLocaleDateString('ja-JP')}</p>
+          <div class="flex gap-2">
+            {work.data.tags.map((tag) => (
+              <p>{`#${tag}`}</p>
+            ))}
+          </div>
+        </div>
+        {/* 要約 */}
         <p class="text-md">{work.data.summary}</p>
       </div>
     </div>
