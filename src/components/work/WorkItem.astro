@@ -1,0 +1,45 @@
+---
+import type { CollectionEntry, render } from 'astro:content';
+import { Image } from 'astro:assets';
+
+interface Props {
+  work: CollectionEntry<'work'>;
+}
+
+const { work } = Astro.props;
+---
+
+<a
+  href={`/works/${work.id}`}
+  class="w-full p-4 border-2 border-white rounded-xl hover:bg-gray-700"
+>
+  <div class="flex gap-4">
+    <Image
+      src={work.data.thumbnail}
+      alt="thumbnail"
+      layout="constrained"
+      width="200"
+      height="250"
+      class="rounded-lg object-cover"
+    />
+
+    <div class="flex flex-col gap-2">
+      <p class="text-2xl font-bold">{work.data.title}</p>
+
+      <div class="flex flex-col gap-1 ml-2">
+        {/* 日付とタグ */}
+        <div class="flex flex-col text-sm text-gray-400">
+          <p>{work.data.pubDate.toLocaleDateString('ja-JP')}</p>
+          <div class="flex gap-2">
+            {work.data.tags.map((tag) => (
+              <p>{`#${tag}`}</p>
+            ))}
+          </div>
+        </div>
+        {/* 要約 */}
+        <p class="text-md">{work.data.summary}</p>
+      </div>
+    </div>
+  </div>
+</a>
+
